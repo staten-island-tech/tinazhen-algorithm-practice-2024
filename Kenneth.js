@@ -8,7 +8,7 @@ const DOMSelectors = {
 };
 const history = [];
 
-function returnInput(input) {
+function returnInput(input) { //No Iteration (for or while loops)
   let output;
 
   if (input == 0) {
@@ -22,7 +22,7 @@ function returnInput(input) {
   return output;
 }
 
-function rockPaperScissors(input) {
+function rockPaperScissors(input) { 
   const random = Math.floor(Math.random() * 100);
   let opponentChoice;
   let outcome;
