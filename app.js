@@ -1,4 +1,4 @@
-function factorial(n){
+/* function factorial(n){
     let r = 1;
     if (isNaN(n)){
         return 'Your input was not a number. Please try again!'
@@ -14,4 +14,10 @@ function factorial(n){
     };
 };
 
-console.log(factorial(3));
+console.log(factorial(3)); */
+
+let yesterday = [];
+
+function parkingSpace(input){
+     
+};

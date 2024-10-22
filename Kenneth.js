@@ -22,14 +22,14 @@ function returnInput(input) { //No Iteration (for or while loops)
   return output;
 }
 
-function rockPaperScissors(input) { 
-  const random = Math.floor(Math.random() * 100);
+function rockPaperScissors(input) { //Algorithm -> True
+  const random = Math.floor(Math.random() * 100); //Sequencing is throughout the function
   let opponentChoice;
   let outcome;
 
-  for (let i = 0; i <= random; i++) {
-    if (i % 3 == 0) {
-      opponentChoice = "rock";
+  for (let i = 0; i <= random; i++) { //Iteration
+    if (i % 3 == 0) {       
+      opponentChoice = "rock";        //Selection
     } else if (i % 2 == 0) {
       opponentChoice = "paper";
     } else {
@@ -62,10 +62,10 @@ function rockPaperScissors(input) {
       outcome = "draw";
     }
   }
-  history.push(outcome);
+  history.push(outcome);          
 
-  DOMSelectors.history.innerHTML = "";
-  DOMSelectors.content.insertAdjacentHTML(
+  DOMSelectors.history.innerHTML = ""; 
+  DOMSelectors.content.insertAdjacentHTML(  
     "afterbegin",
     `<div class="card" id="${outcome}">
     <p>Your choice: ${returnInput(input).toUpperCase()}</p>
@@ -76,15 +76,15 @@ function rockPaperScissors(input) {
   );
 }
 
-function getHistory() {
-  DOMSelectors.content.innerHTML = "";
-  DOMSelectors.history.innerHTML = "";
+function getHistory() { //Algorithm -> True
+  DOMSelectors.content.innerHTML = ""; //Sequencing is throughout the function
+  DOMSelectors.history.innerHTML = ""; 
   let win = 0;
   let lose = 0;
   let draw = 0;
 
-  for (let i = 0; i < history.length; i++) {
-    if (history[i] == "win") {
+  for (let i = 0; i < history.length; i++) { //Iteration
+    if (history[i] == "win") {               //Selection
       win++;
     } else if (history[i] == "lose") {
       lose++;
@@ -92,7 +92,7 @@ function getHistory() {
       draw++;
     }
 
-    DOMSelectors.history.insertAdjacentHTML(
+    DOMSelectors.history.insertAdjacentHTML( 
       "afterbegin",
       `<div class="historyCard" id="${history[i]}">
         <h4>Game ${i + 1}: ${history[i].toUpperCase()}</h4>
@@ -100,7 +100,7 @@ function getHistory() {
     );
   }
 
-  DOMSelectors.history.insertAdjacentHTML(
+  DOMSelectors.history.insertAdjacentHTML( 
     "afterbegin",
     `<h2>Win Rate: ${((win / (win + lose + draw)) * 100)
       .toString()
