@@ -16,8 +16,18 @@
 
 console.log(factorial(3)); */
 
-let yesterday = [];
+function parkingSpace(spaces, yesterday, today){
+    let count = 0;
+    if(isNaN(spaces) || !Number.isInteger(spaces) || spaces < 1 || spaces > 100){
+        return 'Number of spots not valid'
+    }else{
+        for (let i=0; i < spaces; i++) {
+            if (yesterday[i] === 'C' && today[i] === 'C') {
+                count++
+            };
+            return count;
+        };
+    };
+}; 
 
-function parkingSpace(input){
-     
-};
+console.log(parkingSpace(5, 'C..C.', 'CC..C'));
